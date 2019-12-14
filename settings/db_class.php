@@ -72,6 +72,10 @@ class db_connection
 
 	}
 }
+
+// $connection = new db_connection();
+
+// var_dump ($connection->db_connect());
 //fetch last ID
 //row count
 //query error

@@ -24,9 +24,14 @@
 			
 			foreach ($clist as $key => $value) {
 				$myid = $value['pid'];
+				$myname = $value['pname'];
+				$myemail = $value['email'];
+				$mycontact = $value['pcontact'];
+				$mydob = $value['pdob'];
 				
 
-				echo $value['pname']. "<a href='delete.php?cid=$myid'>Delete</a> | <a href='update.php?cid=$myid'>Update</a> <br>";
+				echo $value['pname']. "<a href='delete.php?cid=$myid'>Delete</a> 
+				| <a href='update.php?cid=$myid&cname=$myname&cemail=$myemail&ccontact=$mycontact&cdob=$mydob'>Update</a> <br>";
 			}
 			   // echo $clist[1]['pname'];
 			    //echo $clist[1]['email'];

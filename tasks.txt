@@ -1,0 +1,17 @@
+1. complete the add contact page
+    -implement code to handle the addcontact form.
+    -when someone submits, you write into database table
+    - do form validation e.g require, isset, regular expression
+
+2. read all contacts and display in tabular format
+    - attach edit and delete beside each entry
+
+3. update contact
+    - get details of contact and update with new info
+
+4. delete contact when delete button beside the contact is pressed
+
+5. implement login
+
+6. implement logout 
+    
