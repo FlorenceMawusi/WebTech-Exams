@@ -18,7 +18,7 @@ if (isset($_GET['uedit'])) {
     echo $pid;
     echo $pname;
 
-
+	//email and name validation
 	$bol = true;
 
 	if (!filter_var($pemail, FILTER_VALIDATE_EMAIL)) {
@@ -42,11 +42,11 @@ if (isset($_GET['uedit'])) {
 
 	//echo result
 	if ($ret) {
-		$_SESSION['updated'] = "<h4 style = 'color: green'>Contact Updated</h4>";
+		$_SESSION['updated'] = "<h4 style = 'color: green'>Contact Updated !</h4>";
 		// $_SESSION['namerror'] = $nameErr;
 		// echo "Contact Updated";
 	}else{
-		$_SESSION['updated'] = "Update failed";
+		$_SESSION['updated'] = "Update failed !";
 		// echo "Update failed";
 	}
 

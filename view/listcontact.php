@@ -8,6 +8,21 @@
 <body>
 	<h1><a href="../index.php">Back to Home</a></h1>
 	<h1>List of all contacts</h1>
+	<div class="container">
+	
+	<table class="table table-hover ">
+		<thead>
+		<tr>
+
+			<th>Name</th>
+			<th>Email</th>
+			<th>Contact</th>
+			<th>Date of Birth</th>
+			<th>What do you want to do?</th>
+
+		</tr>
+		</thead>
+		<tbody>
 	<?php
 	session_start();
 		//include the controller
@@ -16,31 +31,31 @@
 		//cal the function for display
 		$clist = viewallcontactctrl();
 		if ($clist) {
-			//print_r($clist);
-			//echo "<br><br>";
-			//var_dump($clist);
-			// iterating over an array 
-			//foreach ($clist as $value) {
-			    // $arr[3] will be updated with each value from $arr...
+			
 			
 			foreach ($clist as $key => $value) {
 				$myid = $value['pid'];
 				$myname = $value['pname'];
 				$myemail = $value['email'];
-				$mycontact = $value['pcontact'];
+				$mycontact = $value['pcontact']; 
 				$mydob = $value['pdob'];
 				
 
-				echo $value['pname']. "<a href='delete.php?cid=$myid'>Delete</a> 
-				| <a href='update.php?cid=$myid&cname=$myname&cemail=$myemail&ccontact=$mycontact&cdob=$mydob'>Update</a> <br>";
+				echo "<tr>";
+				echo "<td>$myname</td>";
+				echo "<td>$myemail</td>";
+				echo "<td>$mycontact</td>";
+				echo "<td>$mydob</td>";
+				echo "<td><a href='delete.php?cid=$myid' class= 'btn btn-outline-danger'>Delete</a>
+				| <a href='update.php?cid=$myid&cname=$myname&cemail=$myemail&ccontact=
+				$mycontact&cdob=$mydob' class= 'btn btn-outline-success'>Update</a>
+		</td>";
+
+  echo "</tr>";
+
+				
 			}
-			   // echo $clist[1]['pname'];
-			    //echo $clist[1]['email'];
-			    //echo $clist[1]['pcontact'];
-			    //echo $clist[1]['pdob'];
-			    //echo "<br>";
-			    //print_r($arr);
-			//}
+			   
 
 		}else{
 			echo "Not working";
@@ -53,7 +68,13 @@
 
 	unset($_SESSION['updated']);
 
-		
-	?>	
+	if (isset($_SESSION['deleted'])) {
+		echo $_SESSION['deleted'];
+	}
+
+	unset($_SESSION['deleted']);	
+	?>
+	</tbody>
+  	</table>	
 </body>
 </html>

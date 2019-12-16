@@ -1,17 +1,22 @@
 <?php
+	session_start();
 	//include the controller
 	require('../controllers/personcontroller.php');	
 	
 	$getid =  $_GET['cid'];
 	
 
-		//call the function for display
-		$clist = delcontactctrl($getid);
+		//call the function to delete
+		$deletec = delcontactctrl($getid);
 
-		if ($clist) {
-			echo "Contact deleted";	
+		if ($deletec) {
+			$_SESSION['deleted'] = "<h4 style = 'color: red'>Contact Deleted!</h4>";	
 		}else{
-			echo "Failed to delete contact";
+			$_SESSION['deleted'] = "Delete failed !";
+		
 		}
 
-?>
+	header( "Location:http://localhost/WebTech-Exams/view/listcontact.php" );
+
+?>		
+}
