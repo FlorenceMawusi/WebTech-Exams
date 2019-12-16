@@ -46,15 +46,31 @@ function delcontactctrl($a){
 	//create a new instance of the class
 	$deletep = new person_class;
 
-	//run the insert method
+	//run the delete method
 	$checkdelete = $deletep->del_contact_mthd($a);
 
+	//return result
 	if ($checkdelete) {
 		return $checkdelete;
 	}else{
 		return false;
 	}
+}
 
-	//return result
+	
+
+//controller function to update
+function updatecontactctrl($a,$b,$c,$d,$e){
+	//create a new instance of the class
+	$updatep = new person_class;
+
+	//run the update method
+	$checkupdate = $updatep->updatecontact_mthd($a,$b,$c,$d,$e);
+
+	if ($checkupdate) {
+		return $checkupdate;
+	}else{
+		return false;
+	}
 }
 ?>

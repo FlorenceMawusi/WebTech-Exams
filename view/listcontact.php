@@ -9,6 +9,7 @@
 	<h1><a href="../index.php">Back to Home</a></h1>
 	<h1>List of all contacts</h1>
 	<?php
+	session_start();
 		//include the controller
 		require('../controllers/personcontroller.php');
 
@@ -44,6 +45,15 @@
 		}else{
 			echo "Not working";
 		}
+
+		
+	if (isset($_SESSION['updated'])) {
+		echo $_SESSION['updated'];
+	}
+
+	unset($_SESSION['updated']);
+
+		
 	?>	
 </body>
 </html>

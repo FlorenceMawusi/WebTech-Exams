@@ -37,6 +37,20 @@ class person_class extends db_connection
 		//return the executed query
 		return $this->db_query($sql);
 	}
-}
+
+	//method for updating a contact
+	public function updatecontact_mthd($a, $b, $c, $d, $e){
+		//write the query
+
+		$sql = " UPDATE studentlist
+		SET pname = '$b', email= '$c', pcontact= '$d', pdob= '$e'
+		WHERE pid = $a";
+
+
+		//run the query
+		return $this->db_query($sql);
+	}
+
+}	
 
 ?>

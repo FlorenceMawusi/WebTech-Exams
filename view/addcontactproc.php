@@ -1,4 +1,6 @@
 <?php
+
+//initiate the session
 session_start();
 //include the controller
 require('../controllers/personcontroller.php');
@@ -9,7 +11,7 @@ if (isset($_GET['uadd'])) {
 	
 	$pemail = $_GET['uemail'];
 	$pphone = $_GET['uphone'];
-	$pdob = $_GET['udob'];
+	$pdob = $_GET['udob']; 
 
 
 	$bol = true;

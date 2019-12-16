@@ -1,18 +1,17 @@
 <?php
 
-session_start();
 
 
-	//grab form data and store in variable
+
+	//grab url data and store in variable
 	
-	$myid = $_GET['cid'];
-    $myid = $_GET['cid'];
-    $myid = $_GET['cid'];
-    $myid = $_GET['cid'];
-    $myid = $_GET['cid'];
-    $myid = $_GET['cid'];
-
-//continue from here
+	$getid = $_GET['cid'];
+    $getname = $_GET['cname'];
+    $getemail = $_GET['cemail'];
+    $getcontact = $_GET['ccontact'];
+    $getdob = $_GET['cdob'];
+	
+	
 
 ?>
 
@@ -28,38 +27,38 @@ session_start();
 
 	<h1><a href="../index.php">Back to Home</a></h1>
 		
-		<form action="addcontactproc.php">
+		<form action="updateprocess.php">
 		  <div class="form-row">
 		    <div class="col-md-4 mb-3">
 		      <label for="validationDefault01">Name</label>
-		      <input type="text" name="uname" class="form-control" id="validationDefault01" placeholder="First name" required>
+		      <input type="text" name="uname" class="form-control" id="validationDefault01" 
+			  placeholder="First name" required value = <?php echo $getname ?> >
 		    </div>
+			<input type="hidden" name="uid" class="form-control" id="validationDefault01" 
+			  value = <?php echo $getid ?> >
+
 		    <div class="col-md-4 mb-3">
 		      <label for="validationDefault02">Email</label>
-		      <input type="Email" class="form-control" id="validationDefault02" placeholder="Email" name="uemail" required>
+		      <input type="Email" class="form-control" id="validationDefault02" 
+			  placeholder="Email" name="uemail" required value = <?php echo $getemail ?>>
 		    </div>
 		  </div>
 		  <div class="form-row">
 		    <div class="col-md-6 mb-3">
 		      <label for="validationDefault03">Phone</label>
-		      <input type="tel" name="uphone" class="form-control" id="validationDefault03" placeholder="Phone Number" maxlength="10" required>
+		      <input type="tel" name="uphone" class="form-control" id="validationDefault03" 
+			  placeholder="Phone Number" maxlength="10" required value = <?php echo $getcontact ?>>
 		    </div>
 		    <div class="col-md-3 mb-3">
 		      <label for="validationDefault04">Date of Birth</label>
-		      <input type="Date" name="udob" class="form-control" id="validationDefault04" placeholder="Date of Birth" required> 
+		      <input type="Date" name="udob" class="form-control" id="validationDefault04" 
+			  placeholder="Date of Birth" required value = <?php echo $getdob ?>> 
 		    </div>
 		  </div>
-		  <button class="btn btn-primary" name="uadd" type="submit">Add Contact</button>
+		  <button class="btn btn-primary" name="uedit" type="submit">Edit Contact</button>
 		</form>
 
-		<?php
-		if (isset($_SESSION['added'])) {
-			echo $_SESSION['added'];
-		}
-
-		unset($_SESSION['added']);
-
-		?>
+		
 
 		
 

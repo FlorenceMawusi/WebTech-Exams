@@ -5,7 +5,7 @@
 	$getid =  $_GET['cid'];
 	
 
-		//cal the function for display
+		//call the function for display
 		$clist = delcontactctrl($getid);
 
 		if ($clist) {
